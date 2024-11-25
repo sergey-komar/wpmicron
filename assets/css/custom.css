@@ -1,0 +1,244 @@
+.menu li.current-menu-item a{
+    color: #f2690e;
+}
+.category-block__item-img{
+    width: 100px;
+    object-fit: cover;
+}
+.modal{
+    z-index: 11;
+}
+.category-block{
+    justify-content: unset;
+    gap: 10px;
+}
+.woocommerce span.onsale{
+    z-index: 2;
+}
+.sub-menu{
+    min-height: 100%;
+}
+/* КАРТОЧКА ТОВАРА НА СТРАНИЦЕ МАГАЗИНА */
+.woocommerce .catalog-block__item.product{
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 10px;
+}
+.catalog-block__item-title{
+    width: 30%;
+}
+.catalog-block__item-title h2{
+    width: 320px;
+    font-weight: 600;
+    color: #0837c3;
+    font-size: 16px;
+    line-height: 1.2;
+    -webkit-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+}
+.catalog-block__item-img{
+    width: 15%;
+}
+.catalog-block__item-img img{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+.catalog-block__item-article{
+    width: 5%;
+}
+.catalog-block__item-availability{
+    width: 10%;
+}
+.catalog-block__item-availability{
+    font-size: 15px;
+}
+.catalog-block__item-price{
+    width: 20%;
+}
+.catalog-block__item-article span,
+.added_to_cart.wc-forward{
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    line-height: 1;
+}
+.catalog-block .single_add_to_cart_button,
+.button.product_type_simple.catalog-block__item-cart.btn{
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+    border: none;
+    height: 40px;
+    background-color: #0837c3 !important;
+}
+
+.page-cart{
+    width: 15%;
+    position: relative;
+}
+.catalog-block .cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.added_to_cart.wc-forward{
+    position: absolute;
+    bottom: -25px;
+    left: 0%;
+    background-color: #f2690e;
+    color: #fff;
+    padding: 5px;
+}  
+.catalog-block__item-cart.btn{
+    padding: 0  !important;
+}
+.catalog-block .input-text{
+    text-align: center;
+   
+}
+.woocommerce-products-header__title.page-title{
+    margin-bottom: 20px;
+}
+.catalog-block .stock.in-stock{
+    display: none;
+}
+body .qib-button-wrapper{
+    width: 55px !important;
+}
+.notices-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+   
+}
+
+
+/* Хлебные крошки */
+.catalog .woocommerce-breadcrumb {
+    margin-bottom: 20px;
+    color: #0837c3;
+}
+.woocommerce-breadcrumb a{
+    color: #767676;
+}
+
+
+@media(max-width: 1050px){
+    body .qib-button-wrapper{
+        width: 100% !important;
+    }
+    .catalog-block__item-article{
+        width: 10%;
+    }
+    .catalog-block__item-availability{
+        width: 15%;
+    }
+    .catalog-block__item-price,
+    .catalog-block__item-title,
+    .catalog-block__item-img,
+    .page-cart{
+        width: 30%;
+    }
+    .products.catalog-block.columns-4{
+        padding-top: 40px;
+    }
+   
+    .catalog-block .single_add_to_cart_button{
+        width: 130px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 800px){
+    .woocommerce .catalog-block__item.product{
+        margin-bottom: 40px;
+    }
+    .catalog-block__item-title{
+        width: 55%;
+    }
+    .catalog-block__item-title h2,
+    .catalog-block__item-price--new,
+    .catalog-block__item-price--old{
+        width: 100%;
+        font-size: 14px;
+    }
+    .catalog .woocommerce-breadcrumb{
+        line-height: 1.2;
+    }
+    
+}
+@media(max-width: 650px){
+    .catalog-block__item-availability{
+        width: 20%;
+    }
+    .page-cart{
+        width: 40%;
+    }
+}
+
+@media(max-width: 550px){
+    .footer-block__menu li{
+        font-size: 15px;
+    }
+    .footer-block__menu li,
+    .footer-block__item-title{
+        margin-bottom: 0;
+    }
+    .footer-block__item-title,
+    .footer-block__item-address{
+        font-size: 16px;
+    }
+    .catalog-block__item-title{
+        width: 80%;
+    }
+    .catalog-block__item-availability{
+        width: 35%;
+    }
+    .page-cart,
+    .catalog-block__item-price,
+    .catalog-block__item-article{
+        width: 100%;
+    }
+    .catalog-block__item-img{
+        width: 60%;
+    }
+    .page-cart{
+        margin-top: 20px;
+    }
+    .woocommerce .catalog-block__item.product{
+        padding: 10px;
+        gap: 5px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+    }
+    .woocommerce .catalog-block__item.product{
+        margin-bottom: 20px;
+    }
+    .notices-box{
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+    .woocommerce-products-header__title.page-title{
+        font-size: 24px;
+        line-height: 1.1;
+    }
+    .category-block__item-img{
+        margin-bottom: 10px;
+    }
+    .catalog-block__item-title h2, .catalog-block__item-price--new, .catalog-block__item-price--old{
+        font-size: 16px;
+    }
+    .products.catalog-block.columns-4{
+        padding-top: 20px;
+    }
+}
