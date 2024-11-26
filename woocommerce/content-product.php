@@ -32,11 +32,25 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	do_action( 'woocommerce_shop_loop_item_title' );
 	?>
 	</a>
+
+	<?php if(!empty(the_field('czena_tovara_po_zaprosu'))) : ?>
+		<div class="price__zapros">
+			<?php the_field('czena_tovara_po_zaprosu');?>
+			<span>Под заказ</span>
+		</div>
+	<?php else: ?>
+		
+	<?php endif;?>
+
+	<?php if(!empty($product->regular_price == true)) : ?>
 	<div class="catalog-block__item-price">
 		<span class="catalog-block__item-price--new"><?php echo $product->regular_price;?> руб</span>
 		<span class="catalog-block__item-price--old"><?php echo $product->sale_price;?> руб</span>
 	</div>
-	<?php //debug($product)?>
+	<?php else: ?>
+					
+	<?php endif;?>
+
 	<div class="catalog-block__item-img">
 	<?php
 	/**

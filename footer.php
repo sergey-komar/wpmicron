@@ -49,7 +49,7 @@
                   <input type="text" class="modal-form__input" placeholder="Имя">
                   <input type="text" class="modal-form__input" placeholder="Телефон">
                   <input type="text" class="modal-form__input" placeholder="Email">
-                  <textarea class="modal-form__textarea" placeholder="Комментарий"></textarea>
+                  <textarea class="modal-form__textarea" placeholder="Сообщение"></textarea>
                   <button class="modal-form__btn">Отправить</button>
                   <div  class="modal__close">&times;</div>
                   <p class="modal-form__text">
