@@ -30,8 +30,35 @@ function micron() {
 add_action('after_setup_theme', 'micron');
 
 
+if( function_exists('acf_add_options_page') ) {
+	
+    acf_add_options_page(array(
+        'page_title' 	=> 'Основные настройки',
+        'menu_title'	=> 'Основные настройки',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    )); 
+}
+
+
+add_action( 'widgets_init', function () {
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar', 'wooeshop' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Add widgets here to appear in your sidebar.', 'wooeshop' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+} );
 
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
+
+
 
 
 

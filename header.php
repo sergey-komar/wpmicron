@@ -65,7 +65,7 @@
                     ]);
                   ?>
               </div>
-            <a href="#" class="nav__price">Скачать прайс</a>
+            <a href="<?php the_field('prajs_tovarov_skachat', 'options');?>" class="nav__price">Скачать прайс</a>
               <?php
                 wp_nav_menu([
                   'theme_location' => 'menu-header-category',
