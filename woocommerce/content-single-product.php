@@ -93,11 +93,18 @@ if ( post_password_required() ) {
 				
 				<?php if(!empty($product->regular_price == true)) : ?>
 				<div class="product-one__top">
-					<div class="product-one__price-new">
-					<?php echo $product->regular_price;?>
+					<!-- <div class="product-one__counter">
+						<div class="product-one__price-old">
+						<?php echo $product->regular_price;?>
+						</div>
+						<span>(С НДС)</span>
+					</div> -->
+					
+					<div class="product-one__price-old">
+						<?php echo $product->regular_price;?>
 						<span>(С НДС)</span>
 					</div>
-					<div class="product-one__price-old">
+					<div class="product-one__price-new">
 						<?php echo $product->sale_price;?>
 						<span>(Без НДС)</span>
 					</div>
@@ -135,6 +142,7 @@ if ( post_password_required() ) {
 
 	</div>
 </div>
+
 	<div class="product-block">
 		<?php if(!empty(get_field('fajly_tovara_opisanie'))) :?>
 		<a href="<?php the_field('fajly_tovara_opisanie');?>" target="_blank" class="product-block__link">Описание типа</a>

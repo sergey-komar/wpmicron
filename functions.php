@@ -56,14 +56,31 @@ add_action( 'widgets_init', function () {
 	);
 } );
 
+
+//УБИРАЕМ span и br в contact form 7
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    $content = str_replace('<br />', '', $content);
+    return $content;
+});
+//УБИРАЕМ span и br в contact form 7
+
+//УБИРАЕМ ТЕГ Р в contact form 7
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
-
-
-
-
 
 
 function debug( $data ) {
 	echo '<pre>' . print_r( $data, 1 ) . '</pre>';
 }
+
+
+
+ 
+
+
+
+ 
 

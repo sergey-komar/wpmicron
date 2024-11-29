@@ -1,24 +1,18 @@
-jQuery(document).ready(function ($) {
-    
+window.addEventListener('DOMContentLoaded', () => {
 
-    $('.quantity button').on('click', function () {
-        let btn = $(this);
-        let inputQty = btn.parent().find('.qty');
-        let prevValue = +(inputQty.val());
-        let newValue = 1;
-        if (btn.hasClass('btn-plus')) {
-            newValue = prevValue + 1;
-        } else {
-            if (prevValue > 1) {
-                newValue = prevValue - 1;
-            }
-        }
-        inputQty.val(newValue);
-    });
+//     const saleInput = document.querySelector('.product-one__sale-input');
+//     const priceOld = document.querySelector('.product-one__price-old');
+//     const priceNew = document.querySelector('.product-one__price-new');
+//     const percent = 500
+//     let sum = 0;
 
-   
+//     function NewCum() {
+//         sum =  Math.round((+priceOld.textContent) - (percent));
+//        if(saleInput.checked){
+//          priceOld.textContent = sum;
+//        }
+//     }
 
-  
-
+//    saleInput.addEventListener('change', NewCum);
 })
 

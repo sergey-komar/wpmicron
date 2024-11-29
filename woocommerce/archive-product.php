@@ -24,7 +24,9 @@ do_action( 'woocommerce_before_main_content' );?>
 	<?php woocommerce_product_taxonomy_archive_header();?>
 	<?php woocommerce_breadcrumb();?>
 
-
+			<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+			</div>
 			<?php if(is_product_category(15)) :?>
 				
 				<div class="category-block">
@@ -46,7 +48,7 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
-					<div class="varieties-block__content-text">
+					<!-- <div class="varieties-block__content-text">
 						Поверка является необходимой процедурой, производимой в целях подтверждения соответствия средств измерений метрологическим требованиям. Ее проведение является обязательным для средств измерений, применяемых в сфере государственного регулирования и обеспечения единых измерений (ОЕИ). Процедура поверки может быть осуществлена только с СИ, тип которых внесен в Государственный Реестр средств измерений. На нашем сайте такой инструмент имеет соответствующую отметку, так же его можно выбрать с помощью одноименного фильтра внутри раздела.
 					</div>
 					<div class="varieties-block__content-text">
@@ -54,7 +56,7 @@ do_action( 'woocommerce_before_main_content' );?>
 					</div>
 					<div class="varieties-block__content-text">
 						Приобрести поверенный инструмент можно прямо на нашем сайте. Для этого нужно зайти в карточку товара и поставить в блоке с ценой галочку напротив пункта «купить с поверкой». Вы сразу видите стоимость поверки для данного типа и размера инструмента. Здесь же можно указать необходимое количество товара, стоимость поверки автоматически умножится на эту величину.
-					</div>
+					</div> -->
 				</div>
 			<?php endif;?>
 
@@ -132,7 +134,7 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
-					<div class="varieties-block__content-text">
+					<!-- <div class="varieties-block__content-text">
 						<span>Калибр</span> – это контрольный инструмент, предназначенный для проверки параметров, таких как размер, форма и взаимное расположение деталей. Используются в разных отраслях промышленности – машиностроительной, военной, авиационной, космической, а также нефте- и газодобывающей.
 					</div>
 					<div class="varieties-block__content-text">
@@ -140,7 +142,7 @@ do_action( 'woocommerce_before_main_content' );?>
 					</div>
 					<div class="varieties-block__content-text">
 						Все калибры можно разделить на две большие группы: рабочие и контрольные. Рабочие используются непосредственно для контроля параметров деталей на производстве. Для контроля отверстий применяются пробки, для контроля валов – кольца и скобы. Контрольные калибры выполняются только в виде пробок и внешне ничем не отличаются от рабочих, но имеют более точный размер (квалитет) и предназначены для проверки размеров при производстве рабочих калибров-колец, а также для контроля их износа.
-					</div>
+					</div> -->
 				</div>
 			<?php endif;?>
 

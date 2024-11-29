@@ -45,17 +45,13 @@
     <div class="modal">
       <div class="modal__inner">
           <div class="modal__inner-block">
-              <form  class="modal-form">
-                  <input type="text" class="modal-form__input" placeholder="Имя">
-                  <input type="text" class="modal-form__input" placeholder="Телефон">
-                  <input type="text" class="modal-form__input" placeholder="Email">
-                  <textarea class="modal-form__textarea" placeholder="Сообщение"></textarea>
-                  <button class="modal-form__btn">Отправить</button>
+              <div  class="modal-form">
+                  <?php echo do_shortcode('[contact-form-7 id="5194bca" title="Форма"]')?>
                   <div  class="modal__close">&times;</div>
                   <p class="modal-form__text">
                     Нажимая кнопку «Отправить», я даю своё согласие на <a href="#">обработку персональных данных.</a>
                   </p>
-              </form>
+              </div>
           </div>
       </div>
     </div>
