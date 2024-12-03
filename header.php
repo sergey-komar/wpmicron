@@ -45,13 +45,14 @@
         <div action="#" class="header-center__search">
           <?php aws_get_search_form( true ); ?>
         </div>
-        <a href="http://micron/akczii/" class="header-center__promotion">Акция</a>
+        <a href="<?php echo get_permalink(get_page_by_path('akczii'))?>" class="header-center__promotion">Акция</a>
         <a href="<?php echo wc_get_cart_url()?>" class="header-center__basket">
           <img src="<?php echo get_template_directory_uri()?>/assets/images/icon/cart.svg" alt="img" class="header-center__basket-img">
           <span><?php echo count( WC()->cart->get_cart() ); ?></span>
         </a>
       </div>
    
+      
       <div class="header-bottom">
         
           <nav class="nav">

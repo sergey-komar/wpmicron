@@ -10,26 +10,35 @@
         <div class="category-block">
 
             <?php
+                global $product;
                 $catalog__terms = get_terms([
                     'taxonomy' => 'product_cat',
                     'orderby'     => 'id', // здесь по какому полю сортировать
                     'hide_empty'  => false, // скрывать категории без товаров или нет
-                    'term_taxonomy_id' => [17, 37, 21,48, 50, 40, 22, 44]
+
                                             ]);
             ?>
+           
+           
             <?php foreach($catalog__terms as $catalog__term) : 
                 $woo_cat_id = $catalog__term->term_id; //category ID
                 $category_thumbnail_id = get_term_meta($woo_cat_id, 'thumbnail_id', true);
                 $thumbnail_image_url = wp_get_attachment_url($category_thumbnail_id);
+                $poly = get_field('populyarnye_kategorii', $catalog__term);
             ?>
+            <?php if(! empty($poly)) :?>
             <a href="<?php echo get_term_link($catalog__term->term_id);?>" class="category-block__item">
                 <img src="<?php echo $thumbnail_image_url?>" alt="img" class="category-block__item-img">
                 <div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
             </a>
+            <?php else:?>
+              
+            <?php endif;?>
             <?php endforeach;?>
-        </div>
 
-        <a href="#" class="category__btn btn">Каталог инструмента</a>
+        </div>
+               
+        <a href="<?php echo wc_get_page_permalink('shop')?>" class="category__btn btn">Каталог инструмента</a>
         </div>
     </section>
 
@@ -85,7 +94,7 @@
                 <p class="production-block__info-text">
                 Компания объединяет 3 производства и осуществляет поставки продукции по всей территории России.
                 </p>
-                <a href="#" class="production-block__info-btn btn">Посмотреть вакансии</a>
+                <a href="<?php echo get_permalink(get_page_by_path('vakansii'))?>" class="production-block__info-btn btn">Посмотреть вакансии</a>
             </div>
             <div class="production-block__desc">
                 <div class="production-block__desc-title">
@@ -101,7 +110,7 @@
                 <span>35</span>
                 Товарных категорий
                 </div>
-                <a href="#" class="production-block__desc-link">Подробнее</a>
+                <a href="<?php echo get_permalink(get_page_by_path('o-kompanii'))?>" class="production-block__desc-link">Подробнее</a>
             </div>
             </div>
             <p class="production__text">
@@ -114,9 +123,9 @@
         <div class="container">
             <div class="verification__title title">Поверка и калибровка си</div>
             <p class="verification__text">
-            Наш партнёр - <a href="#">РМЦ Калиброн оказывает услуги по поверке и калибровке измерительного инструмента.</a>Приоритетными направлениями являются: проведение работ по проверке линейно- угловых средств измерений, калибровке средств допускового контроля (калибров). поверке средств измерения давления вакуума, температуры, времени и частоты, веса и массы, химического состава веществ и другие.
+            Наш партнёр - <a href="https://calibronrmc.ru/">РМЦ Калиброн оказывает услуги по поверке и калибровке измерительного инструмента.</a>Приоритетными направлениями являются: проведение работ по проверке линейно- угловых средств измерений, калибровке средств допускового контроля (калибров). поверке средств измерения давления вакуума, температуры, времени и частоты, веса и массы, химического состава веществ и другие.
             </p>
-            <a href="#" class="verification__btn btn">Перейти</a>
+            <a href="https://calibronrmc.ru/" class="verification__btn btn">Перейти</a>
         </div>
     </div>
 <?php get_footer();?>

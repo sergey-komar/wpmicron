@@ -131,7 +131,7 @@ if ( post_password_required() ) {
 					<div class="product-one__qty">
 						<?php woocommerce_template_single_add_to_cart();?>
 					</div>
-					<a href="https://www.chipdip.ru/" target="_blank" class="product-one__bottom-btn">Купить в розницу</a>
+					<a href="<?php the_field('kupit_v_rozniczu_ssylka'); ?>" target="_blank" class="product-one__bottom-btn">Купить в розницу</a>
 					
 				</div>
 				
