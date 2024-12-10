@@ -24,9 +24,33 @@ do_action( 'woocommerce_before_main_content' );?>
 	<?php woocommerce_product_taxonomy_archive_header();?>
 	<?php woocommerce_breadcrumb();?>
 	
-			<div class="sidebar">
+			<?php if(is_shop()) :?>
+				 <div class="category-block">
+					<?php
+						$catalog__terms = get_terms([
+							'taxonomy' => 'product_cat',
+							'orderby'     => 'id', // здесь по какому полю сортировать
+							'hide_empty'  => false, // скрывать категории без товаров или нет
+							'parent'   => 0
+													]);
+					?>
+					<?php foreach($catalog__terms as $catalog__term) : 
+						$woo_cat_id = $catalog__term->term_id; //category ID
+						$category_thumbnail_id = get_term_meta($woo_cat_id, 'thumbnail_id', true);
+						$thumbnail_image_url = wp_get_attachment_url($category_thumbnail_id);
+					?>
+					<a href="<?php echo get_term_link($catalog__term);?>" class="category-block__item">
+						<img src="<?php echo $thumbnail_image_url?>" alt="img" class="category-block__item-img">
+						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
+					</a>
+					<?php endforeach;?>
+					
+				</div>
+				<div class="sidebar">
 				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
-			</div>
+				</div> 
+			<?php endif;?>
+
 			<?php if(is_product_category(15)) :?>
 				
 				<div class="category-block">
@@ -50,10 +74,12 @@ do_action( 'woocommerce_before_main_content' );?>
 					<?php endforeach;?>
 					
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(17)) :?>
-				
 				
 				<div class="category-block">
 					<?php
@@ -75,10 +101,12 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(18)) :?>
-				
 				
 				<div class="category-block">
 					<?php
@@ -100,11 +128,12 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
-			
 			<?php if(is_product_category(20)) :?>
-				
 				
 				<div class="category-block">
 					<?php
@@ -126,11 +155,13 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
-					
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(21)) :?>
-				
 				
 				<div class="category-block">
 					<?php
@@ -152,6 +183,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -178,6 +212,9 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(23)) :?>
@@ -202,6 +239,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -228,6 +268,9 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(26)) :?>
@@ -252,6 +295,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -278,6 +324,9 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(35)) :?>
@@ -302,6 +351,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -328,6 +380,9 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(40)) :?>
@@ -352,6 +407,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -378,6 +436,9 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
 			<?php if(is_product_category(46)) :?>
@@ -402,6 +463,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -428,9 +492,11 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
 
-			
 			<?php if(is_product_category(50)) :?>
 				
 				<div class="category-block">
@@ -453,6 +519,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -479,9 +548,10 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
-
-			
 
 			<?php if(is_product_category(55)) :?>
 				
@@ -505,6 +575,9 @@ do_action( 'woocommerce_before_main_content' );?>
 						<div class="category-block__item-title"><?php echo $catalog__term->name;?></div>
 					</a>
 					<?php endforeach;?>
+				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
 				</div>
 			<?php endif;?>
 
@@ -531,8 +604,12 @@ do_action( 'woocommerce_before_main_content' );?>
 					</a>
 					<?php endforeach;?>
 				</div>
+				<div class="sidebar">
+				<?php echo do_shortcode('[woof_front_builder name = «Моя форма фильтра» popup_width=800 popup_height=600]')?>
+				</div>
 			<?php endif;?>
-		<div class="notices-box">
+
+		<div class="notices-box1">
 			<?php
 			/**
 			 * Hook: woocommerce_before_shop_loop.

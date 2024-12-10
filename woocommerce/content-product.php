@@ -33,8 +33,8 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	?>
 	</a>
 
-	<?php if(!empty(the_field('czena_tovara_po_zaprosu'))) : ?>
-		<div class="price__zapros">
+	<?php if(!empty(get_field('czena_tovara_po_zaprosu'))) : ?>
+		<div class="price__zapros catalog-block__item-price">
 			<?php the_field('czena_tovara_po_zaprosu');?>
 			<span>Под заказ</span>
 		</div>

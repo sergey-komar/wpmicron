@@ -6,11 +6,12 @@
     object-fit: cover;
 }
 .modal{
-    z-index: 11;
+    z-index: 1000;
 }
 .category-block{
     justify-content: unset;
     gap: 10px;
+    margin-bottom: 20px;
 }
 .woocommerce span.onsale{
     z-index: 2;
@@ -29,6 +30,18 @@
     color: #f2690e;
     font-size: 16px;
     font-weight: 600;
+}
+.notices-box{
+    padding-top: 20px;
+}
+.page-numbers{
+    margin-bottom: 20px;
+}
+.header-center__search--mobile{
+    display: none;
+}
+.category-block__item{
+    margin-bottom: 0;
 }
 
 
@@ -133,13 +146,13 @@
 body .qib-button-wrapper{
     width: 55px !important;
 }
-/* .notices-box{
+.notices-box{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
    
-} */
+}
 .product{
     padding: 0;
 }
@@ -148,6 +161,9 @@ body .qib-button-wrapper{
 }
 .varieties-block__content-text span{
     font-weight: 600;
+}
+.notices-box1{
+    padding-top: 30px;
 }
 
 
@@ -194,7 +210,7 @@ body .product-one__qty .qib-button-wrapper{
 }
 .price__zapros{
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
 }
 .price__zapros span{
@@ -214,6 +230,16 @@ body .product-one__qty .qib-button-wrapper{
     color: #fff;
     border-radius: 5px;
 }
+.product-one__price-old{
+    margin-bottom: 5px;
+}
+.product-one__price-old strong,
+.product-one__price-new strong{
+    font-size: 16px;
+}
+
+
+
 
 /* КОРЗИНА */
 .cart-block{
@@ -269,7 +295,7 @@ body .product-one__qty .qib-button-wrapper{
 }
 .cart-subtotal,
 .order-total{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -317,11 +343,21 @@ body .product-one__qty .qib-button-wrapper{
     background-color: #0837c3;
     color: #fff;
 }
-
+.woocommerce-shipping-methods label{
+    margin-left: 8px;
+}
+.cart-subtotal__title,
+.cart-block .cart-subtotal span, .cart-block .order-total span{
+    font-size: 20px;
+}
+.woocommerce-privacy-policy-text a{
+    color: #0837c3;
+    font-weight: 600;
+}
 
 
 /* ОФОРМЛЕНИЕ ЗАКАЗА */
-.checkout.woocommerce-checkout{
+.checkout__inner{
     padding: 70px 0;
     display: flex;
     gap: 60px;
@@ -392,6 +428,9 @@ body .product-one__qty .qib-button-wrapper{
 .order-total span{
     font-size: 16px;
 }
+.cart-block .order-total{
+    margin-top: 30px;
+}
 .order-total{
     margin-top: 10px;
 }
@@ -410,11 +449,23 @@ body .product-one__qty .qib-button-wrapper{
     margin-bottom: 20px;
     margin-top: 10px;
 }
-.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout{
-    position: absolute;
-    top: 20px;
-}
 
+.payment_method_bacs{
+    font-weight: 600;
+}
+.wc_payment_method.payment_method_bacs{
+    margin-bottom: 10px;
+}
+.payment_box.payment_method_cod p,
+.payment_box.payment_method_bacs p{
+    font-weight: 400;
+}
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout .woocommerce-error{
+    margin-top: 20px;
+    background-color: #0837c3;
+    padding: 20px;
+    color: #fff;
+}
 
 
 
@@ -455,6 +506,19 @@ table {
 .woocommerce-order-details__title,
 .woocommerce-column__title{
     font-size: 20px;
+}
+
+
+/* ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ */
+.policy__title{
+    margin-bottom: 20px;
+}
+.polisy h3{
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.polisy div{
+    margin-bottom: 15px;
 }
 
 
@@ -733,9 +797,62 @@ table {
         padding-bottom: 0 !important;
     }
     .woof_container{
-        margin-bottom: 0 !important;
+        margin-bottom: 5px !important;
+    }
+    .woof_container.woof_price_filter {
+        margin-bottom: 15px !important;
     }
     .woof_price3_search_container.woof_container.woof_price_filter.woof_fs_by_price{
         width: 100% !important;
     } 
+    .header-center{
+        margin-bottom: 15px;
+    }
+    .header-center__search{
+        display: none;
+    }
+    .header-center__search--mobile{
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+    }
+    .header-center__search--mobile .aws-container .aws-search-form{
+        height: 40px;
+    }
+    .header-center__promotion{
+        margin: 0 auto;
+    }
+    .header-center__basket img{
+        width: 30px;
+    }
+    .header-center__basket span{
+        right: 1px;
+    }
+    .header-center__basket{
+        margin-left: auto;
+    }
+    .logo img{
+        width: 80px;
+    }
+    .woocommerce-result-count{
+        margin-bottom: 5px;
+    }
+    .catalog-block__item-img img{
+        margin: 0;
+    }
+    .added_to_cart.wc-forward{
+        width: 140px;
+        right: 0;
+        left: auto;
+        text-align: center;
+    }
+    .woocommerce-cart__item{
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+    }
+    .product__wrapper{
+        gap: 5px;
+    }
+    
 }

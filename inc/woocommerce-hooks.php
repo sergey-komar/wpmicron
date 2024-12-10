@@ -2,25 +2,23 @@
 // ОТКЛЮЧАЕМ ВСЕ СТИЛИ woocommerce
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+
 //ОТКЛЮЧЕНИЕ КОПИЙ КАРТИНОК
-add_action( 'after_setup_theme', 'remove_plugin_image_sizes', 999 );
+## отключаем создание миниатюр файлов для указанных размеров
+add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
 
-function remove_plugin_image_sizes(){
-	remove_image_size( 'crop' );
+function delete_intermediate_image_sizes( $sizes ){
+	// размеры которые нужно удалить
+	return array_diff( $sizes, [
+		'medium_large',
+		'large',
+		'1536x1536',
+    'woocommerce_single',
+    'woocommerce_thumbnail',
+    'woocommerce_gallery_thumbnail',
+		'2048x2048',
+	] );
 }
-add_action( 'after_setup_theme', 'remove_plugin_image_sizes_one', 999 );
-function remove_plugin_image_sizes_one(){
-	remove_image_size( 'woocommerce_single' );
-}
-add_action( 'after_setup_theme', 'remove_plugin_image_sizes_two', 999 );
-function remove_plugin_image_sizes_two(){
-	remove_image_size( 'woocommerce_single' );
-}
-add_action( 'after_setup_theme', 'remove_plugin_image_sizes_three', 999 );
-function remove_plugin_image_sizes_three(){
-	remove_image_size( 'woocommerce_gallery_thumbnail' );
-}
-
 
 //Отключаем распродажу в карточке товара на странице магазина
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
@@ -56,6 +54,16 @@ add_filter( 'woocommerce_add_to_cart_fragments', function ( $fragments ) {
 	$fragments['span.cart-badge'] = '<span class="badge text-bg-warning cart-badge bg-warning rounded-circle">' . count( WC()->cart->get_cart() ) . '</span>';
 	return $fragments;
 } );
+
+
+// КОЛЛИЧЕСТВО ОТОБРАЖЕНИЯ ПОХОЖИХ ТОВАРОВ НА СТРАНИЦЕ ТОВАРА
+add_filter( 'woocommerce_output_related_products_args', 'truemisha_rel_products_args', 25 );
+ 
+function truemisha_rel_products_args( $args ) {
+	$args[ 'posts_per_page' ] = 3; // сколько штук отображать
+
+	return $args;
+}
 
 
 

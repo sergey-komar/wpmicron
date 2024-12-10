@@ -49,7 +49,7 @@
                   <?php echo do_shortcode('[contact-form-7 id="5194bca" title="Форма"]')?>
                   <div  class="modal__close">&times;</div>
                   <p class="modal-form__text">
-                    Нажимая кнопку «Отправить», я даю своё согласие на <a href="#">обработку персональных данных.</a>
+                    Нажимая кнопку «Отправить», я даю своё согласие на <a href="<?php echo get_permalink(get_page_by_path('politika-konfidenczialnosti'))?>">обработку персональных данных.</a>
                   </p>
               </div>
           </div>
@@ -60,5 +60,4 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <?php wp_footer();?>
 </body>
-
 </html>

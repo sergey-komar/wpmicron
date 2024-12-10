@@ -38,7 +38,7 @@
 
         </div>
                
-        <a href="<?php echo wc_get_page_permalink('shop')?>" class="category__btn btn">Каталог инструмента</a>
+        <a href="<?php the_field('katalog_skachat', 'options');?>" target="_blank" class="category__btn btn">Каталог инструмента</a>
         </div>
     </section>
 

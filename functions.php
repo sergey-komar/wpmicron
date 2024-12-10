@@ -5,7 +5,7 @@ function micron_script() {
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/assets/css/custom.css', [], '2024', 'all' );
 
     wp_enqueue_script('micron-js', get_template_directory_uri() . '/assets/js/main.min.js', [], '2024', true);
-    wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', [], '2024', true);
+   
 }
 add_action('wp_enqueue_scripts', 'micron_script');
 

@@ -83,7 +83,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="order-total">
 			<div class="cart-subtotal__title"><?php esc_html_e( 'Total', 'woocommerce' ); ?></div>
 			<div data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></div>
-	</div>
+		</div>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 

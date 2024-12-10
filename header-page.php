@@ -16,8 +16,8 @@
     <div class="container">
       <div class="header-top">
         <div class="header-top__left">
-          <a href="http://micron/oplata/" class="header-top__left-payment">Оплата</a>
-          <a href="http://micron/dostavka/" class="header-top__left-delivery">Доставка</a>
+          <a href="<?php echo get_permalink(get_page_by_path('oplata'))?>" class="header-top__left-payment">Оплата</a>
+          <a href="<?php echo get_permalink(get_page_by_path('dostavka'))?>" class="header-top__left-delivery">Доставка</a>
         </div>
 
         <div class="header-top__center">

@@ -58,7 +58,7 @@ if ( post_password_required() ) {
 				<div class="product-one__box">
 					<?php if(!empty(get_field('gabarity_blok'))) : ?>
 					<div class="product-one__box-title">
-						<?php the_field('gabarity_blok')?>
+						<div class="product-one__box-title"><?php the_field('gabarity_blok')?></div>
 					</div>
 					<?php else: ?>
 					
@@ -101,11 +101,11 @@ if ( post_password_required() ) {
 					</div> -->
 					
 					<div class="product-one__price-old">
-						<?php echo $product->regular_price;?>
+						<?php echo $product->regular_price;?> <strong>руб</strong>
 						<span>(С НДС)</span>
 					</div>
 					<div class="product-one__price-new">
-						<?php echo $product->sale_price;?>
+						<?php echo $product->sale_price;?> <strong>руб</strong>
 						<span>(Без НДС)</span>
 					</div>
 				</div>
@@ -131,7 +131,10 @@ if ( post_password_required() ) {
 					<div class="product-one__qty">
 						<?php woocommerce_template_single_add_to_cart();?>
 					</div>
+
+					<?php if(! empty(get_field('kupit_v_rozniczu_ssylka'))) : ?>
 					<a href="<?php the_field('kupit_v_rozniczu_ssylka'); ?>" target="_blank" class="product-one__bottom-btn">Купить в розницу</a>
+					<?php endif;?>
 					
 				</div>
 				
